@@ -70,3 +70,19 @@
 ## tables.lua
 
 - copy: table深拷贝
+
+  ```lua
+  a = {name="yimt"}
+  b = tables.copy(a)
+  
+  a.name = "yimtcode"
+  
+  print("a.name:" .. a.name .. "\n" .. "b.name:" .. b.name)
+  
+  --[[
+  a.name:yimtcode
+  b.name:yimt
+  ]]
+  ```
+
+  
