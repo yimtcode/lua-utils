@@ -63,10 +63,13 @@ end
 ---
 ---@param source table @数据源
 ---@param callback fun(value1:any, value2:any) @回调会将source每个元素都放入callback方法执行一次
+---@param table
 function enum.each(source, callback)
-    for _, v in ipairs(source, callback) do
-        callback(v)
+    local new = {}
+    for _, v in pairs(source) do
+        table.insert(new, callback(v))
     end
+    return new
 end
 
 return enum
