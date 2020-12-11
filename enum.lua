@@ -7,16 +7,31 @@
 enum = {}
 
 ---
---- 过滤
+--- 任意一个满足条件的
 ---
 ---@param source table @数据源
----@param cond function @过滤方法,cond(index, value)返回值true保留,false删除
+---@param funcCond function @判断方法,只要存在一个funcCond(value)为true，any返回值为true，否则为false
+---@return boolean @返回值true:存在满足条件元素,false:不存在满足条件元素
+function enum.any(source, funcCond)
+    for _, v in pairs(source, cond) do
+        if funcCond(v) then
+            return true
+        end
+    end
+    return false
+end
+
+---
+--- 过滤不符合条件元素
+---
+---@param source table @数据源
+---@param funcCond function @过滤方法,funcCond(value)返回值true保留,false删除
 ---@return table
-function enum.filter(source, cond)
+function enum.filter(source, funcCond)
     local new = {}
 
-    for i, v in pairs(source) do
-        if cond(i, v) then
+    for _, v in pairs(source) do
+        if funcCond(v) then
             table.insert(new, v)
         end
     end
