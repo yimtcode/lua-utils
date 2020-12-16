@@ -72,4 +72,26 @@ function enum.each(source, callback)
     return new
 end
 
+---
+--- 冒泡排序
+---
+---@param source table @数据源
+---@param funcCompare fun(v1:any, v2:any) @如果funcCompare,v1>v2返回true,从小到大排序,如果v1<v2返回true从大到小排序
+function enum.bubbleSort(source, funcCompare)
+    local len = #source
+    local flag = true
+    for i = 0, len - 2, 1 do
+        if not flag then
+            break
+        end
+        flag = false
+        for j = 1, len - i - 1, 1 do
+            if funcCompare(source[j], source[j + 1]) then
+                source[j], source[j + 1] = source[j + 1], source[j]
+                flag = true
+            end
+        end
+    end
+end
+
 return enum
