@@ -58,6 +58,26 @@ function enum.find(source, funcCond)
 end
 
 ---
+--- 总合
+---
+---@param source table @数据源
+---@param funcGetValue fun(v:any) @获取每一项需要累加的值,如果该值为nil默认当将每一项累加
+---@return number @总合
+function enum.sum(source, funcGetValue)
+    local sum = 0
+
+    for _, v in pairs(source) do
+        if nil == funcGetValue then
+            sum = sum + v
+        else
+            sum = sum + funcGetValue(v)
+        end
+    end
+
+    return sum
+end
+
+---
 --- 遍历
 ---
 ---@param source table @数据源
