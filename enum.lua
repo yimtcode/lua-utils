@@ -58,6 +58,22 @@ function enum.find(source, funcCond)
 end
 
 ---
+--- 查找一个符合条件元素索引
+---
+---@param source table @数据源
+---@param funcCompare fun(value:any) @比较方法
+---@return number @数据索引,找不到返回-1
+function enum.findIndex(source, funcCompare)
+    for i, v in pairs(source) do
+        if funcCompare(v) then
+            return i
+        end
+    end
+
+    return -1
+end
+
+---
 --- 总合
 ---
 ---@param source table @数据源
@@ -95,8 +111,8 @@ end
 --- 冒泡排序
 ---
 ---@param source table @数据源
----@param funcCompare fun(v1:any, v2:any) @如果funcCompare,v1>v2返回true,从小到大排序,如果v1<v2返回true从大到小排序
-function enum.bubbleSort(source, funcCompare)
+---@param funcLess fun(v1:any, v2:any) @funcLess,v1>v2返回true,从小到大排序,如果v1<v2返回true从大到小排序
+function enum.bubbleSort(source, funcLess)
     local len = #source
     local flag = true
     for i = 0, len - 2, 1 do
@@ -105,7 +121,7 @@ function enum.bubbleSort(source, funcCompare)
         end
         flag = false
         for j = 1, len - i - 1, 1 do
-            if funcCompare(source[j], source[j + 1]) then
+            if funcLess(source[j], source[j + 1]) then
                 source[j], source[j + 1] = source[j + 1], source[j]
                 flag = true
             end

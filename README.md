@@ -35,6 +35,22 @@
   ]]
   ```
 
+- findIndex: 查找一个符合条件的元素的索引
+
+  ```lua
+  index = enum.findIndex({2, 3, 4}, function(value)
+      return value == 4
+  end)
+  
+  print(index)
+  
+  --[[
+  3
+  ]]
+  ```
+
+  
+
 - find: 查找一个符合条件的元素
 
   ```lua
@@ -70,7 +86,21 @@
 - bubbleSort: 冒泡排序
 
   ```lua
+  arr = {4, 1, 2, 3}
+  enum.bubbleSort(arr, function(v1, v2)
+      return v1 > v2
+  end)
   
+  for _, v in pairs(arr) do
+      print(v)
+  end
+  
+  --[[
+  1
+  2
+  3
+  4
+  ]]
   ```
 
 ## tables.lua
