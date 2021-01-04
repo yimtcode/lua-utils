@@ -103,13 +103,13 @@
   ]]
   ```
 
-## tables.lua
+## utils.lua
 
 - copy: table深拷贝
 
   ```lua
   a = {name="yimt"}
-  b = tables.copy(a)
+  b = utils.copy(a)
   
   a.name = "yimtcode"
   
