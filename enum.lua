@@ -97,7 +97,7 @@ end
 --- 遍历
 ---
 ---@param source table @数据源
----@param callback fun(value1:any, value2:any) @回调会将source每个元素都放入callback方法执行一次
+---@param callback fun(value:any) @回调会将source每个元素都放入callback方法执行一次
 ---@return table
 function enum.each(source, callback)
     local new = {}
