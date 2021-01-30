@@ -59,10 +59,10 @@
   ]]
   ```
   
-- each: 对所有元素执行操作
+- map: 对所有元素执行操作
 
   ```lua
-  newArr = array.each({ 1, 2, 3 }, function(element)
+  newArr = array.map({ 1, 2, 3 }, function(element)
       return element * 2
   end)
   
@@ -98,37 +98,37 @@
 
 - forEach: 遍历每个元素
 
-```lua
-arr = { 1, 2, 3 }
+  ```lua
+  arr = { 1, 2, 3 }
 
-array.forEach(arr, function(element)
-    print(element)
+  array.forEach(arr, function(element)
+      print(element)
 
-    return element ~= 2
-end)
---[[
-1
-2
-]]
-```
+      return element ~= 2
+  end)
+  --[[
+  1
+  2
+  ]]
+  ```
 
 - merge: 合并数组
 
-```lua
-arr1 = { 1, 2 }
-arr2 = { 3, 4 }
+  ```lua
+  arr1 = { 1, 2 }
+  arr2 = { 3, 4 }
 
-newArr = array.merge(arr1, arr2)
-for _, v in pairs(newArr) do
-    print(v)
-end
---[[
-1
-2
-3
-4
-]]
-```
+  newArr = array.merge(arr1, arr2)
+  for _, v in pairs(newArr) do
+      print(v)
+  end
+  --[[
+  1
+  2
+  3
+  4
+  ]]
+  ```
 
 
 
