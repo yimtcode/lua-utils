@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/luautils.iml" filepath="$PROJECT_DIR$/.idea/luautils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lua-utils.iml" filepath="$PROJECT_DIR$/.idea/lua-utils.iml" />
     </modules>
   </component>
 </project>
