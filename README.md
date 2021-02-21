@@ -7,8 +7,9 @@
 ## 当前库
 
 - [array.lua](./array.lua)：[帮助文档](./doc/array.md)
-- [tab.lua](./tab.lua)：[帮助文档](./doc/tab.md)
+- [tables.lua](./tab.lua)：[帮助文档](./doc/tab.md)
 - [sort.lua](./tab.lua)：[帮助文档](./doc/sort.md)
+- [strings.lua](./strings.lua)：[帮助文档](./doc/strings.md)
 
 ## 计划
 

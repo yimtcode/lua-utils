@@ -1,4 +1,4 @@
-# table
+# tables
 
 - copy(source):table
 
@@ -8,7 +8,7 @@
 
   ```lua
   a = {name="yimt"}
-  b = tab.copy(a)
+  b = tables.copy(a)
   
   a.name = "yimtcode"
   
