@@ -1,10 +1,10 @@
 # array.lua
 
-- any(source, function(element):boolean):boolean
+- ## any(source, function(element):boolean):boolean
 
   > 只要有一个符合条件的为true,否则为false
 
-  **示例**
+  **Example**
 
   ```lua
   b = array.any({ 2, 3, 4 }, function(element)
@@ -21,7 +21,7 @@
 
   > 返回一个过滤之后的数组
 
-  **示例**
+  **Example**
 
   ```lua
   newArr = array.filter({ 2, 3, 4 }, function(element)
@@ -41,7 +41,7 @@
 
   > 返回第一个符合条件的元素，如果不存在符合条件的元素返回nil
 
-  **示例**
+  **Example**
 
   ```lua
   v = array.find({ 2, 3, 4 }, function(element)
@@ -58,7 +58,7 @@
 
   >  查找元素索引，如果找到返回索引，如果没有找到返回-1
 
-  **示例**
+  **Example**
 
   ```lua
   index = array.findIndex({ 2, 3, 4 }, function(element)
@@ -74,6 +74,8 @@
 - map(source, function(element):any):table
 
   > 对数组每个元素进行处理，返回处理过后的数组
+
+  **Example**
 
   ```lua
   newArr = array.map({ 1, 2, 3 }, function(element)
@@ -93,6 +95,8 @@
 - sum(source, function(element):number):number
 
   > 统计总合
+
+  **Example**
 
   ```lua
   --1.
@@ -138,7 +142,7 @@
 
   > 合并任意数量数组
 
-  **示例**
+  **Example**
 
   ```lua
   arr1 = { 1, 2 }
@@ -156,26 +160,35 @@
   ]]
   ```
 
-- bubbleSort(source, function(element):boolean)
+- reduce(source, function(item:any, result:any):any):any
 
-  > 冒泡排序
+  > 按指定方法处理一个数组，返回一个结果
 
-  **示例**
-
+  **Example**
+  
   ```lua
-  arr = { 4, 1, 2, 3 }
+  -- 1.合计
+  arr = { 1, 2, 3 }
   
-  array.bubbleSort(arr, function(v1, v2)
-      return v1 > v2
+  result = array.reduce(arr, function(item, result)
+      return item + result
   end)
-  
-  for _, v in pairs(arr) do
-      print(v)
-  end
+  print(result)
   --[[
-  1
-  2
-  3
+  6
+  ]]
+  
+  -- 2.查找最大值
+  arr = { 4, 1, 3 }
+  result = array.reduce(arr, function(item, result)
+      if item > result then
+          return item
+      else
+          return result
+      end
+  end)
+  print(result)
+  --[[
   4
   ]]
   ```
