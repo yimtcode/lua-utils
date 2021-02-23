@@ -4,7 +4,7 @@
 local sort = {}
 
 ---
---- bubble sort function
+--- bubble sort
 ---
 --- source: data source.
 --- funcLess(v1, v2):boolean: compare function, if v1 > v2 result is true descend, else ascend.

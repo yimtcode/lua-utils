@@ -1,6 +1,4 @@
----
---- table tool function
----
+-- table tool function
 local tables = {}
 
 ---

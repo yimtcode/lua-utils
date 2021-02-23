@@ -1,3 +1,4 @@
+-- strings tool function
 local strings = {}
 
 ---

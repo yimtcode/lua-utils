@@ -1,11 +1,11 @@
--- lua array util
+-- array tool function
 array = {}
 
 ---
 --- find element
 ---
 --- source: data source
---- funcCond function(element:any):boolean: find cond, if function funcCond(element) result true,
+--- funcCond: find cond, if function funcCond(element) result true,
 --- function any return true, if no once match function "any" return false.
 ---@param source any[]
 ---@param funcCond function(element:any):boolean
@@ -20,9 +20,10 @@ function array.any(source, funcCond)
 end
 
 ---
---- 过滤方法返回一个新的数组
+--- filter return a  new table
 ---
---- source数据源，fun(element:any)过滤条件，如果funcCond(value)为ture保存进新的数组。
+--- source: data source.
+--- funcCond: filter cond, if return true keep back else discard.
 ---@param source any[]
 ---@param funcCond fun(element:any):boolean
 ---@return table
@@ -39,11 +40,12 @@ function array.filter(source, funcCond)
 end
 
 ---
---- 查找第一个符合条件元素
+--- find first match element
 ---
---- source数据源，funcCond(element)查询条件，如果为true方法find返回这个元素,如果没有返回true的元素，find返回nil
+--- source: data source.
+--- funcCond: find cond.
 ---@param source any[]
----@param funcCond fun(element:any)
+---@param funcCond fun(element:any):boolean
 ---@return any
 function array.find(source, funcCond)
     for _, element in pairs(source) do
@@ -58,7 +60,8 @@ end
 ---
 --- find element index
 ---
---- source数据源，funcCond(element)查询条件，如果funcCond(element)结果为true方法findIndex返回元素索引，否则返回-1
+--- source: data source.
+--- funcCond: find cond.
 ---@param source any[]
 ---@param funcCond fun(element:any):boolean
 ---@return number
@@ -73,11 +76,12 @@ function array.findIndex(source, funcCond)
 end
 
 ---
---- 统计总合
+--- amount
 ---
---- source数据源，funcGetNumber(element)返回需要累加的数字，如果funcGetNumber值为nil直接将数组每个元素累加。
+--- source: data source.
+--- funcGetNumber: return need amount number, ignored direct accumulation of each item.
 ---@param source any[]
----@param funcGetNumber fun(element:any)
+---@param funcGetNumber fun(element:any):number
 ---@return number
 function array.sum(source, funcGetNumber)
     local sum = 0
