@@ -3,12 +3,9 @@ array = {}
 
 ---
 --- find element
----
---- source: data source
---- funcCond: find cond, if function funcCond(element) result true,
---- function any return true, if no once match function "any" return false.
----@param source any[]
----@param funcCond function(element:any):boolean
+---@param source any[] @data source
+---@param funcCond fun(element:any):boolean @find cond, if function funcCond(element) result true, function any
+--- return true, if no once match function "any" return false
 ---@return boolean
 function array.any(source, funcCond)
     for _, element in pairs(source) do
@@ -21,11 +18,8 @@ end
 
 ---
 --- filter return a  new table
----
---- source: data source.
---- funcCond: filter cond, if return true keep back else discard.
----@param source any[]
----@param funcCond fun(element:any):boolean
+---@param source any[] @data source
+---@param funcCond fun(element:any):boolean @filter cond, if return true keep back else discard.
 ---@return table
 function array.filter(source, funcCond)
     local new = {}
@@ -98,12 +92,10 @@ function array.sum(source, funcGetNumber)
 end
 
 ---
---- 对数组每个元素按func处理，并且返回一个新的数组
----
---- source待处理数组，func处理方法。
----@param source any[]
+--- process every element
+---@param source table @data source
 ---@param func function(element:any):any
----@return any[]
+---@return table @new table
 function array.map(source, func)
     local new = {}
 
@@ -115,10 +107,8 @@ function array.map(source, func)
 end
 
 ---
---- 遍历数组的每个元素
----
---- source数据源，func(element)数据调用的方法，如果结果为true继续向下执行，如果为false停止。
----@param source table
+--- travel element
+---@param source table @data source
 ---@param func function(element:any):boolean
 function array.forEach(source, func)
     for _, element in pairs(source) do
@@ -129,8 +119,7 @@ function array.forEach(source, func)
 end
 
 ---
---- 将任意数量的数组合并
----
+--- merge multiple array
 ---@vararg any
 ---@return any[]
 function array.merge(...)

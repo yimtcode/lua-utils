@@ -3,7 +3,6 @@ local tables = {}
 
 ---
 --- table deep copy
----
 ---@param source any
 ---@return any
 function tables.copy(source)

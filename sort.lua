@@ -5,11 +5,8 @@ local sort = {}
 
 ---
 --- bubble sort
----
---- source: data source.
---- funcLess(v1, v2):boolean: compare function, if v1 > v2 result is true descend, else ascend.
----@param source any[]
----@param funcLess fun(v1:any, v2:any):boolean
+---@param source table @data source.
+---@param funcLess fun(v1:any, v2:any):boolean @compare function, if v1 > v2 result is true descend, else ascend.
 function sort.bubbleSort(source, funcLess)
     local len = #source
     local flag = true
