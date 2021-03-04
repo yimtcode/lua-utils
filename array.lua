@@ -35,11 +35,8 @@ end
 
 ---
 --- find first match element
----
---- source: data source.
---- funcCond: find cond.
----@param source any[]
----@param funcCond fun(element:any):boolean
+---@param source any[] @data source
+---@param funcCond fun(element:any):boolean @match function
 ---@return any
 function array.find(source, funcCond)
     for _, element in pairs(source) do
@@ -53,11 +50,8 @@ end
 
 ---
 --- find element index
----
---- source: data source.
---- funcCond: find cond.
----@param source any[]
----@param funcCond fun(element:any):boolean
+---@param source any[] @data source
+---@param funcCond fun(element:any):boolean @match function
 ---@return number
 function array.findIndex(source, funcCond)
     for i, element in pairs(source) do
@@ -71,11 +65,8 @@ end
 
 ---
 --- amount
----
---- source: data source.
---- funcGetNumber: return need amount number, ignored direct accumulation of each item.
----@param source any[]
----@param funcGetNumber fun(element:any):number
+---@param source any[] @data source
+---@param funcGetNumber fun(element:any):number @return need amount number, ignored direct accumulation of each item
 ---@return number
 function array.sum(source, funcGetNumber)
     local sum = 0
@@ -204,6 +195,20 @@ function array.max(source, func)
     end
 
     return max
+end
+
+---
+--- reverse
+---@param source any[]
+---@return any[]
+function array.reverse(source)
+    local new = {}
+
+    for i = #source, 1, -1 do
+        table.insert(new, source[i])
+    end
+
+    return new
 end
 
 return array

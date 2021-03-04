@@ -222,7 +222,7 @@
   ]]
   ```
 
-  - min(source, function(element):number): any
+- min(source, function(element):number): any
 
   > 寻找最小对象，function可选
 
@@ -250,3 +250,23 @@
   a       4
   ]]
   ```
+
+- reverse(source):any[]
+
+  > 颠倒数组
+
+  **Example**
+
+  ```lua
+  arr = array.reverse({1, 2, 3})
+  for i, v in pairs(arr) do
+      print(v)
+  end
+  --[[
+  3
+  2
+  1
+  ]]
+  ```
+
+  
