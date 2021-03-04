@@ -6,6 +6,8 @@
 
 ## 当前库
 
+> 提示：使用模块前，请先主动加载。示例代码不包含加载lua模块部份。
+
 - [array.lua](./array.lua)：[帮助文档](./doc/array.md)
 - [tables.lua](./tab.lua)：[帮助文档](./doc/tab.md)
 - [sort.lua](./tab.lua)：[帮助文档](./doc/sort.md)
