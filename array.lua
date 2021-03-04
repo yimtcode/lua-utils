@@ -137,8 +137,7 @@ end
 
 ---
 --- reduce
----
----@param source
+---@param source table
 ---@param func function(item:any, result:any):any
 ---@return any
 function array.reduce(source, func)
@@ -154,6 +153,57 @@ function array.reduce(source, func)
     end
 
     return result
+end
+
+---
+--- min
+---@param source table
+---@param func function(element):number @optional function
+---@return any
+function array.min(source, func)
+    assert(#source ~= 0, "empty error")
+
+    local min = nil
+    local minNumber
+    for _, v in pairs(source) do
+        local t = v
+        if func ~= nil then
+            t = func(t)
+        end
+
+        if min == nil or minNumber > t then
+            min = v
+            minNumber = t
+        end
+    end
+
+    return min
+end
+
+---
+--- max
+---@param source table
+---@param func function(element):number @optional function
+---@return any
+function array.max(source, func)
+    assert(#source ~= 0, "empty error")
+
+    local max = nil
+    local maxNumber = 0
+
+    for _, v in pairs(source) do
+        local t = v
+        if func ~= nil then
+            t = func(t)
+        end
+
+        if max == nil or maxNumber < t then
+            max = v
+            maxNumber = t
+        end
+    end
+
+    return max
 end
 
 return array

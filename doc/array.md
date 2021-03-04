@@ -193,3 +193,60 @@
   ]]
   ```
 
+- max(source, function(element):number): any
+
+  > 寻找最大对象，function可选
+
+  **Example**
+
+  ```lua
+  -- 1.simple
+  min = array.min({1, 2, 3})
+  print(min)
+  --[[
+  1
+  ]]
+  
+  -- 2.table array
+  list = {
+      {name="a", age=4},
+      {name="b", age=2},
+      {name="c", age=3}
+  }
+  m = array.min(list, function(item)
+      return item.age
+  end)
+  print(m.name, m.age)
+  --[[
+  b       2
+  ]]
+  ```
+
+  - min(source, function(element):number): any
+
+  > 寻找最小对象，function可选
+
+  **Example**
+
+  ```lua
+  -- 1.simple
+  min = array.min({1, 2, 3})
+  print(min)
+  --[[
+  3
+  ]]
+  
+  -- 2.table array
+  list = {
+      {name="a", age=4},
+      {name="b", age=2},
+      {name="c", age=3}
+  }
+  m = array.max(list, function(item)
+      return item.age
+  end)
+  print(m.name, m.age)
+  --[[
+  a       4
+  ]]
+  ```
