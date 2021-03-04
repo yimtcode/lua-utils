@@ -4,14 +4,14 @@
 >
 > 注意：当前处在不稳定版本，不会考虑向前兼容
 
-## 当前库
+## Document
 
-> 提示：使用模块前，请先主动加载。示例代码不包含加载lua模块部份。
+> Note: load module at use before
 
-- [array.lua](./array.lua)：[帮助文档](./doc/array.md)
-- [tables.lua](./tables.lua)：[帮助文档](./doc/tables.md)
-- [sort.lua](./sort.lua)：[帮助文档](./doc/sort.md)
-- [strings.lua](./strings.lua)：[帮助文档](./doc/strings.md)
+- [array.lua](./array.lua)：[array document](./doc/array.md)
+- [tables.lua](./tables.lua)：[tables document](./doc/tables.md)
+- [sort.lua](./sort.lua)：[array sort document](./doc/sort.md)
+- [strings.lua](./strings.lua)：[string tools document](./doc/strings.md)
 
 ## 计划
 
@@ -22,7 +22,15 @@
   4. 文档英文化
 - 长期：暂无。
 
-## 更新日志
+## Update log
 
+- v0.3.4
+  - update tables content erorr in the README.md
 
+- V0.3.3
+
+  - add min and max function in the array
+  - add reverse function in the array
+
+  
 
